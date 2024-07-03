@@ -1,6 +1,7 @@
 
 # Web Application using Flask + Cloud Deployment Demo
-![OnlineShopping](/App.JPG)
+![image](https://github.com/MoeinAbtahi/ENGR5590G-Assignment-1/assets/156379192/da6b5f17-1e1e-4417-a920-0eb10fec0af0)
+
 
 ## Open Visual Studio and select Create a new project
 
