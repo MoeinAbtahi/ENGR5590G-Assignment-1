@@ -331,9 +331,24 @@ footer {
 2. Add product details in the following format:
 
 ```plaintext
-1,Product A,10.99,Type 1,https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f
-2,Product B,15.49,Type 2,https://images.unsplash.com/photo-1567306226416-28f0efdc88ce
-3,Product C,8.99,Type 3,https://loremflickr.com/cache/resized/65535_51774384039_624f926674_q_150_150_nofilter.jpg
+1,Necklace,8.99,Jewelry,https://loremflickr.com/cache/resized/65535_51774384039_624f926674_q_150_150_nofilter.jpg
+2,Apple,10.00,Fruit,https://i5.walmartimages.ca/images/Enlarge/094/514/6000200094514.jpg
+3,Shoes,200.00,Clothes,https://m.media-amazon.com/images/I/71nVRe1IaWL._AC_UY900_.jpg
+4,Necklace,8.99,Jewelry,https://loremflickr.com/cache/resized/65535_51774384039_624f926674_q_150_150_nofilter.jpg
+5,Apple,10.00,Fruit,https://i5.walmartimages.ca/images/Enlarge/094/514/6000200094514.jpg
+6,Shoes,200.00,Clothes,https://m.media-amazon.com/images/I/71nVRe1IaWL._AC_UY900_.jpg
+7,Necklace,8.99,Jewelry,https://loremflickr.com/cache/resized/65535_51774384039_624f926674_q_150_150_nofilter.jpg
+8,Apple,10.00,Fruit,https://i5.walmartimages.ca/images/Enlarge/094/514/6000200094514.jpg
+9,Shoes,200.00,Clothes,https://m.media-amazon.com/images/I/71nVRe1IaWL._AC_UY900_.jpg
+10,Necklace,8.99,Jewelry,https://loremflickr.com/cache/resized/65535_51774384039_624f926674_q_150_150_nofilter.jpg
+11,Apple,10.00,Fruit,https://i5.walmartimages.ca/images/Enlarge/094/514/6000200094514.jpg
+12,Shoes,200.00,Clothes,https://m.media-amazon.com/images/I/71nVRe1IaWL._AC_UY900_.jpg
+13,Necklace,8.99,Jewelry,https://loremflickr.com/cache/resized/65535_51774384039_624f926674_q_150_150_nofilter.jpg
+14,Apple,10.00,Fruit,https://i5.walmartimages.ca/images/Enlarge/094/514/6000200094514.jpg
+15,Shoes,200.00,Clothes,https://m.media-amazon.com/images/I/71nVRe1IaWL._AC_UY900_.jpg
+16,Necklace,8.99,Jewelry,https://loremflickr.com/cache/resized/65535_51774384039_624f926674_q_150_150_nofilter.jpg
+17,Apple,10.00,Fruit,https://i5.walmartimages.ca/images/Enlarge/094/514/6000200094514.jpg
+18,Shoes,200.00,Clothes,https://m.media-amazon.com/images/I/71nVRe1IaWL._AC_UY900_.jpg
 ```
 
 ## Run the Application
