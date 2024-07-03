@@ -1,5 +1,4 @@
-
-# Web Application using Flask + Cloud Deployment Demo
+# Create a Online Shopping Application using Flask Project
 ![OnlineShopping](/App.JPG)
 
 ## Open Visual Studio and select Create a new project
@@ -371,7 +370,7 @@ footer {
 
 ## Deploy to Google Cloud Platform
 
-1. **Install Google Cloud SDK**: Follow the instructions to install the Google Cloud SDK [https://cloud.google.com/sdk/docs/install-sdk].
+1. **Install Google Cloud SDK**: Follow the instructions to install the Google Cloud SDK.
 2. **Create a New Project**: Go to the Google Cloud Console and create a new project.
 3. **Enable Billing**: Ensure billing is enabled for your project.
 4. **Deploy the Application**:
