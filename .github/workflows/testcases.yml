@@ -10,11 +10,6 @@ jobs:
   test-and-deploy:
     runs-on: ubuntu-latest
 
-    strategy:
-      fail-fast: false
-      matrix:
-        retry-count: [1, 2, 3, 4]  # Retry up to 4 times if failed
-
     steps:
     - uses: actions/checkout@v2
 
@@ -47,8 +42,14 @@ jobs:
         gcloud auth activate-service-account --key-file=$HOME/gcloud.json
 
     - name: Deploy to Google Cloud App Engine
+      id: deploy
       run: |
-        gcloud app deploy app.yaml --quiet
+        gcloud app deploy app.yaml --quiet || exit 1
 
-      continue-on-error: true
-      if: ${{ matrix.retry-count != 4 }}
+    - name: Retry Deploy on Failure
+      if: ${{ failure() }}
+      run: |
+        for retry in 1 2 3 4; do
+          echo "Retry attempt $retry"
+          gcloud app deploy app.yaml --quiet || exit 1
+        done
