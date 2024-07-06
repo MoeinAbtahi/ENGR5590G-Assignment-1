@@ -8,7 +8,6 @@ on:
 
 jobs:
   test-and-deploy:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -33,7 +32,6 @@ jobs:
         PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
         GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
       run: |
-        gsutil -m rsync -r ./ gs://github@test-shopping-428314.iam.gserviceaccount.com
-
-  # You can add more deployment steps here if needed
-
+        echo "${{ secrets.GCP_SA_KEY }}" > key.json
+        export GOOGLE_APPLICATION_CREDENTIALS="key.json"
+        gsutil -m rsync -r ./ gs://test-shopping-428314.ue.r.appspot.com/
