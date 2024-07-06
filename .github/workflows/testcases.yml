@@ -35,8 +35,10 @@ jobs:
         service_account_key: ${{ secrets.GCP_SA_KEY }}
 
     - name: Authenticate to Google Cloud
+      env:
+        GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
       run: |
-        echo "${{ secrets.GCP_SA_KEY }}" > $HOME/gcloud.json
+        echo "${GCP_SA_KEY}" > $HOME/gcloud.json
         gcloud auth activate-service-account --key-file=$HOME/gcloud.json
 
     - name: Deploy to Google Cloud Storage
