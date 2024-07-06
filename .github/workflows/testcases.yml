@@ -33,7 +33,7 @@ jobs:
         PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
         GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
       run: |
-        gsutil -m rsync -r ./ gs://test-shopping-428314.appspot.com
+        gsutil -m rsync -r ./ gs://github@test-shopping-428314.iam.gserviceaccount.com
 
   # You can add more deployment steps here if needed
 
