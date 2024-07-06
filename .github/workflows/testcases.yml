@@ -43,7 +43,7 @@ jobs:
 
     - name: Deploy to Google Cloud Storage
       run: |
-        gsutil cp -r ./ gs://staging.test-shopping-428314.appspot.com/
+        gsutil cp -r ./ gs://test-shopping-428314.appspot.com/
 
     - name: Deploy to Google Cloud App Engine
       run: |
