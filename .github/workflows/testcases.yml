@@ -1,4 +1,4 @@
-name: Auto Test
+name: Auto Test and Deploy
 
 on:
   push:
@@ -7,20 +7,33 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  test-and-deploy:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: '3.9'
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+
     - name: Run tests
       run: |
         python -m unittest discover
+
+    - name: Deploy to Google Cloud Storage
+      env:
+        PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
+      run: |
+        gsutil -m rsync -r ./path/to/your/website gs://your-bucket-name
+
+  # You can add more deployment steps here if needed
+
