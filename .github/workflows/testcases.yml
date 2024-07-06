@@ -45,9 +45,10 @@ jobs:
       id: deploy
       run: |
         gcloud app deploy app.yaml --quiet || exit 1
+      continue-on-error: true
 
     - name: Retry Deploy on Failure
-      if: ${{ failure() }}
+      if: ${{ steps.deploy.outcome != 'success' }}
       run: |
         for retry in 1 2 3 4; do
           echo "Retry attempt $retry"
