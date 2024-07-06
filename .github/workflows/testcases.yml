@@ -34,5 +34,5 @@ jobs:
       run: |
         echo "${{ secrets.GCP_SA_KEY }}" > key.json
         export GOOGLE_APPLICATION_CREDENTIALS="key.json"
-        gsutil -m rsync -r ./ gs://test-shopping-428314.appspot.com/
+        gsutil -m rsync -r ./ gs://staging.test-shopping-428314.appspot.com/
         
