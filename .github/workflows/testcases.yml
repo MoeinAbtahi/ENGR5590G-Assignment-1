@@ -27,11 +27,18 @@ jobs:
       run: |
         python -m unittest discover
 
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        version: 'latest'
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+
     - name: Deploy to Google Cloud Storage
-      env:
-        PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
       run: |
-        echo "${{ secrets.GCP_SA_KEY }}" > key.json
-        export GOOGLE_APPLICATION_CREDENTIALS="key.json"
-        gsutil -m rsync -r ./ gs://staging.test-shopping-428314.appspot.com/
+        gsutil cp -r ./ gs://staging.test-shopping-428314.appspot.com/
+
+    - name: Deploy to Google Cloud App Engine
+      run: |
+        gcloud app deploy app.yaml --quiet
+
